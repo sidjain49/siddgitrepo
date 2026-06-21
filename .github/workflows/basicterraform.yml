@@ -1,6 +1,11 @@
 
 
 name: infra-pipeline usingterraform
+permissions: 
+  id-token: write
+   
+   
+    
 
 
 on:
