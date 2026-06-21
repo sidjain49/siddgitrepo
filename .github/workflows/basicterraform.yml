@@ -38,7 +38,7 @@ jobs:
          with:
           client-id: 1de689ce-13a4-4bbd-b1fe-bfacb9c08b44
           tenant-id: 1171f52f-e7a8-4e84-bc3c-786a8db0cac7
-          subscription-id: c8e9529b-812c-42b7-89ab-4c49d4e5a210          
+          subscription-id: 7d7e4c65-1bfb-4455-b143-d0d76737869b          
        - run: terraform init
          working-directory: parentfolder
        - run: terraform plan
