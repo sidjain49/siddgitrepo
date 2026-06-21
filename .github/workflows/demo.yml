@@ -1,12 +1,14 @@
 name: hello world
-on: workflow_dispatch
+on: 
+ workflow_dispatch
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: hello sujit bhai
-        run: echo "welcome to sujit bhai haveli"
+
         run: |
+       echo "welcome to sujit bhai haveli"
        echo "sujit bhai is hero"
        echo "sujit bhai is devops engineers"
        
