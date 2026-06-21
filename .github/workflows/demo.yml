@@ -20,7 +20,7 @@ jobs:
          - name: application deploy
            run: echo "sujit bhai application chalgai per issue aaya to sujit bhai deka ga hum nai hum sirf salary lega moja kara ga"
        
-         - 
+         
       
 
         
