@@ -2,14 +2,26 @@ name: hello world
 on: 
  workflow_dispatch:
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: hello sujit bhai
+      - name: build step
+        run: echo "sujit bhai ki haveli application"
 
-        run: |
-          echo "welcome to sujit bhai haveli"
-          echo "sujit bhai is hero"
-          echo "sujit bhai is devops engineers"
+  test:
+     runs-on: ubuntu-latest
+     steps:
+       - name: test phase
+         run: echo "sujit bhai ki application testing"
+
+  deploy:
+       runs-on: ubuntu-latest
+       steps:
+         - name: application deploy
+           run: echo "sujit bhai application chalgai per issue aaya to sujit bhai deka ga hum nai hum sirf salary lega moja kara ga"
        
+         - 
+      
+
+        
         
