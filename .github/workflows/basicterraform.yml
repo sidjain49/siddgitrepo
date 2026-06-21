@@ -43,7 +43,7 @@ jobs:
          working-directory: parentfolder
        - run: terraform plan
          working-directory: parentfolder 
-       - run: terraform apply
+       - run: terraform apply -auto-approve
          working-directory: parentfolder  
          
            
