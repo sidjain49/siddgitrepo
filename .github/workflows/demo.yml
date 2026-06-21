@@ -10,17 +10,25 @@ jobs:
 
   test:
      runs-on: ubuntu-latest
+     needs: build
      steps:
        - name: test phase
          run: echo "sujit bhai ki application testing"
 
   deploy:
        runs-on: ubuntu-latest
+       needs: test
        steps:
          - name: application deploy
            run: echo "sujit bhai application chalgai per issue aaya to sujit bhai deka ga hum nai hum sirf salary lega moja kara ga"
        
-         
+  deployag:
+        runs-on: ubuntu-latest
+        needs: deploy
+        steps:
+          - name: new app deploy
+            run: echo "issue fixed again application run"
+               
       
 
         
