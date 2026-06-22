@@ -1,55 +1,42 @@
+name: infra-pipeline-usingterraform
 
-
-name: infra-pipeline usingterraform
-permissions: 
+permissions:
   id-token: write
-   
-   
-    
-
 
 on:
-  
   push:
-    branches: [ "main" ]
- 
+    branches:
+      - main
 
- 
   workflow_dispatch:
 
-
 jobs:
- 
   build:
-    
     runs-on: ubuntu-latest
 
-    
     steps:
-     
-     
-       - uses: actions/checkout@v4
-      
-       - name: Install Terraform
-         uses: little-core-labs/install-terraform@v2.0.0
-         with:
-          version: 1.15.6
-       - uses: Azure/login@v3
-         with:
-                {
-          "subscriptionId":  "7d7e4c65-1bfb-4455-b143-d0d76737869b",
-          "tenantId":  "1171f52f-e7a8-4e84-bc3c-786a8db0cac7",
-          "clientId":  "1de689ce-13a4-4bbd-b1fe-bfacb9c08b44"
-                 }
-       - run: terraform init
-         working-directory: parentfolder
-       - run: terraform plan
-         working-directory: parentfolder 
-       - run: terraform apply -auto-approve
-         working-directory: parentfolder
-       - run: terraform destroy -auto-approve
-         working-directory: parentfolder
-      
-      
-         
-           
+      - uses: actions/checkout@v4
+
+      - name: Install Terraform
+        uses: little-core-labs/install-terraform@v2.0.0
+        with:
+          version: 1.9.8
+
+      - name: Azure Login
+        uses: Azure/login@v3
+        with:
+          client-id: 1de689ce-13a4-4bbd-b1fe-bfacb9c08b44
+          tenant-id: 1171f52f-e7a8-4e84-bc3c-786a8db0cac7
+          subscription-id: 7d7e4c65-1bfb-4455-b143-d0d76737869b
+
+      - run: terraform init
+        working-directory: parentfolder
+
+      - run: terraform plan
+        working-directory: parentfolder
+
+      - run: terraform apply -auto-approve
+        working-directory: parentfolder
+
+      - run: terraform destroy -auto-approve
+        working-directory: parentfolder
