@@ -36,7 +36,12 @@ jobs:
           version: 1.15.6
        - uses: Azure/login@v3
          with:
-          creds: ${{ secrets.AZURE_CREDENTIAL }}
+                {
+          "clientSecret":  "AZURE_CREDENTIALS",
+          "subscriptionId":  "AZURE_CREDENTIALS",
+          "tenantId":  "AZURE_CREDENTIALS",
+          "clientId":  "AZURE_CREDENTIALS"
+                 }
        - run: terraform init
          working-directory: parentfolder
        - run: terraform plan
