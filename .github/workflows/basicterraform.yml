@@ -37,10 +37,9 @@ jobs:
        - uses: Azure/login@v3
          with:
                 {
-          "clientSecret":  "AZURE_CREDENTIALS",
-          "subscriptionId":  "AZURE_CREDENTIALS",
-          "tenantId":  "AZURE_CREDENTIALS",
-          "clientId":  "AZURE_CREDENTIALS"
+          "subscriptionId":  "7d7e4c65-1bfb-4455-b143-d0d76737869b",
+          "tenantId":  "1171f52f-e7a8-4e84-bc3c-786a8db0cac7",
+          "clientId":  "1de689ce-13a4-4bbd-b1fe-bfacb9c08b44"
                  }
        - run: terraform init
          working-directory: parentfolder
